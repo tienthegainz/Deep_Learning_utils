@@ -5,6 +5,7 @@ import time
 
 def convert_png_2_jpg(imgdir):
     for img_path in os.listdir(imgdir):
+        #print(img_path.split('.')[-1].lower())
         if img_path.split('.')[-1].lower() == 'png':
             img_path = os.path.join(imgdir, img_path)
             im = Image.open(img_path)
@@ -22,9 +23,10 @@ def remove_non_img(imgdir):
             print('Remove: ', img_path)
 
 def main(rootdir):
+    print("Analyzing {}".format(rootdir))
     for imgdir in os.listdir(rootdir):
         imgdir = os.path.join(rootdir, imgdir)
-        convert_png_2_jpg(rootdir)
+        convert_png_2_jpg(imgdir)
         remove_non_img(imgdir)
 
 if __name__ == '__main__':
