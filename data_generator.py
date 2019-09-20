@@ -154,6 +154,7 @@ def main(rootdir):
     print(data_generator)"""
     generator = KerasCustomGenerator(target_size=(224, 224))
     data_generator = generator.flow_from_directory(rootdir, batch_size=16)
+    print(data_)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
